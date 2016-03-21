@@ -2,7 +2,7 @@
   (:require [nucleotide-count :refer [count nucleotide-counts]])
   (:use midje.sweet))
 
-(future-fact "empty-dna-strand-has-no-adenosine"
+(fact "empty-dna-strand-has-no-adenosine"
              (nucleotide-count/count \A "") => 0)
 
 (future-fact "empty-dna-strand-has-no-nucleotides"
