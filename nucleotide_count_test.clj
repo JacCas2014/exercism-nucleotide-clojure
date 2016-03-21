@@ -5,7 +5,7 @@
 (fact "empty-dna-strand-has-no-adenosine"
              (nucleotide-count/count \A "") => 0)
 
-(future-fact "empty-dna-strand-has-no-nucleotides"
+(fact "empty-dna-strand-has-no-nucleotides"
              (nucleotide-count/nucleotide-counts "") => {\A 0, \T 0, \C 0, \G 0})
 
 (future-fact "repetitive-cytidine-gets-counted"

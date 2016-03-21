@@ -5,4 +5,5 @@
    0)
 
  (defn nucleotide-counts
-   [dna])
+   [dna]
+   {\A 0, \T 0, \C 0, \G 0})
