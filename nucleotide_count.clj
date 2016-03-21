@@ -2,7 +2,10 @@
 
  (defn count
    [nucleotide dna]
-   0)
+   (let [frequencies-of-nucleotides (frequencies dna)]
+     (if (not-empty frequencies-of-nucleotides)
+       (frequencies-of-nucleotides nucleotide)
+       0)))
 
  (defn nucleotide-counts
    [dna]
