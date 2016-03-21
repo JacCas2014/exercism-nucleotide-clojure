@@ -11,7 +11,7 @@
 (fact "repetitive-cytidine-gets-counted"
              (nucleotide-count/count \C "CCCCC") => 5)
 
-(future-fact "repetitive-sequence-has-only-guanosine"
+(fact "repetitive-sequence-has-only-guanosine"
              (nucleotide-count/nucleotide-counts "GGGGGGGG") => {\A 0, \T 0, \C 0, \G 8})
 
 (future-fact "counts-only-thymidine"
