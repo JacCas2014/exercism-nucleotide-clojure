@@ -14,12 +14,12 @@
 (fact "repetitive-sequence-has-only-guanosine"
              (nucleotide-count/nucleotide-counts "GGGGGGGG") => {\A 0, \T 0, \C 0, \G 8})
 
-(future-fact "counts-only-thymidine"
+(fact "counts-only-thymidine"
              (nucleotide-count/count \T "GGGGGTAACCCGG") => 1)
 
 (future-fact "validates-nucleotides"
              (nucleotide-count/count \X "GACT") => (throws Throwable))
 
-(future-fact "counts-all-nucleotides"
+(fact "counts-all-nucleotides"
       (let [s "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"]
         (nucleotide-count/nucleotide-counts s) => {\A 20, \T 21, \G 17, \C 12}))
