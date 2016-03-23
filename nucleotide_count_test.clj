@@ -17,9 +17,16 @@
 (fact "counts-only-thymidine"
              (nucleotide-count/count \T "GGGGGTAACCCGG") => 1)
 
-(future-fact "validates-nucleotides"
+(fact "validates-nucleotides"
              (nucleotide-count/count \X "GACT") => (throws Throwable))
 
 (fact "counts-all-nucleotides"
       (let [s "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"]
         (nucleotide-count/nucleotide-counts s) => {\A 20, \T 21, \G 17, \C 12}))
+
+(fact "is-nucleotide? returns truthy value when ACGT"
+      (nucleotide-count/is-nucleotide? \A) => truthy)
+
+(fact "is-nucleotide? returns falsey value when not ACGT"
+      (nucleotide-count/is-nucleotide? \X) => falsey)
+

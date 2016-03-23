@@ -1,7 +1,12 @@
  (ns nucleotide-count)
 
+(defn is-nucleotide? [nucleotide]
+  (re-matches #"[ATCG]+" (str nucleotide)))
+
  (defn count
    [nucleotide dna]
+   (when (not (is-nucleotide? nucleotide))
+     (throw (new Throwable)))
    (let [number-of-nucleotide ((frequencies dna) nucleotide)]
       (if (nil? number-of-nucleotide)
         0
